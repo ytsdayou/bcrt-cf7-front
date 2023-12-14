@@ -2,7 +2,7 @@
   <section class="boo-cool-container">
 
     <section class="boo-cool-cf7-header">
-      <div class="boo-cool-cf7-title">Contact Form 7 Record</div>
+      <div class="boo-cool-cf7-title">Record For Contact Form 7</div>
       
     </section>
 
