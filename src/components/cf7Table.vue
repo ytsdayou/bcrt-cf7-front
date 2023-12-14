@@ -24,7 +24,7 @@
                       type="daterange"
                       align="right"
                       unlink-panels
-                      range-separator="-"
+                      range-separator="-" :clearable="false"
                       start-placeholder="begin" @change="getData"
                       end-placeholder="end" value-format="yyyy-MM-dd"
                       :picker-options="pickerOptions">

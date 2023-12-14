@@ -134,6 +134,8 @@ export default {
     },
 
     async mounted() {
+        this.$set(this.filter, 'dateRange', [this.dateBeforeDays(new Date(), -30), this.dateBeforeDays(new Date(), 0)])
+
         this.w = window.bctr_cf7_data;
 
         this.resizeTable();
@@ -524,6 +526,20 @@ export default {
         imgDetail(src) {
             this.zoomPic = src;
             this.dialogZoomPic = true;
+        },
+
+        // @param days: positive is delay days, negtive is early days
+        dateBeforeDays(dateStr = new Date(), days = 0) {
+            let date = new Date (dateStr);
+            date.setDate(date.getDate() + days);
+            let y = date.getFullYear();
+            let m = this.doubleNum(date.getMonth () + 1);
+            let d = this.doubleNum(date.getDate ());
+            return `${y}-${m}-${d}`;
+        },
+
+        doubleNum(n) {
+            return n > 9 ? n : "0" + n
         }
     }
 }
