@@ -229,22 +229,11 @@ export default {
                 title: "Action",
                 width: 160,
                 renderBodyCell: ({ row, column, rowIndex }, h) => {
-                    let memo;console.log(that.w)
-                    if( that.m === 1 ) {
-                        memo = h('span', {class: 'h-icon', on: {'click': () => {this.handleClick(row, 'memo')}}}, ['', h('span', {class: 'el-icon-tickets'})]);
-                    } else {
-                        memo = h('el-tooltip', { attrs: {effect: 'dark', content: "Memo: This feature is available in Pro version."} }, [
-                            '', h('span', {class: 'h-icon disabled' }, ['', h('span', {class: 'el-icon-tickets'})])
-                        ])
-                    }
-
                     return h(
                         "span", 
                         {class: "bct-action"},
                         [
                             '',
-                            //h('span', {class: 'h-icon', on: {'click': () => {this.handleClick(row, 'memo')}}}, ['', h('span', {class: 'el-icon-tickets'})]),
-                            memo,
                             h('span', {class: 'h-icon', on: {'click': () => {this.handleClick(row, 'view')}}}, ['', h('span', {class: 'el-icon-view'})]),
                             h('span', {class: 'h-icon', on: {'click': () => {this.handleClick(row, 'edit')}}}, ['', h('span', {class: 'el-icon-edit'})]),
                             h('span', {class: 'h-icon', on: {'click': () => {this.handleClick(row, 'del')}}}, ['', h('span', {class: 'el-icon-delete'})])
